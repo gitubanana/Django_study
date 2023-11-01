@@ -1,2 +1,1 @@
-# NestJS
 # Django_study
