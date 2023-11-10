@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('write/', write, name='write'),
+    path('list/', list, name='list'),
 ]
