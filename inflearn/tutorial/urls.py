@@ -23,4 +23,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('write/', write, name='write'),
     path('list/', list, name='list'),
+    path('view/<int:num>/', view),
 ]
