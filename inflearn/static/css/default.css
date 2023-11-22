@@ -1,0 +1,34 @@
+table, th, td {
+    border:1px solid black;
+    text-align: center;
+    width: 50%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('/static/images/background.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: black;
+    opacity: 0.9;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+  
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+.color {
+    color: green;
+}
