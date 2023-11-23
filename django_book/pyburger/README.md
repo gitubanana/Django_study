@@ -19,6 +19,6 @@
         ```bash
         python3 manage.py runserver
         ```
-    3. http://127.0.0.1/admin에 접속
-        1번에서 만든 Username/Password 입력
-        Burgers에 데이터 추가
+    3. http://127.0.0.1/admin에 접속<br>
+        1번에서 만든 Username/Password 입력<br>
+        Burgers에 데이터 추가<br>
