@@ -38,6 +38,8 @@ body {
   margin-top: -4vh; }
   #index > h1 {
     margin-bottom: 4px; }
+  #index > .error {
+    color: red; }
 
 #navbar {
   position: fixed;
