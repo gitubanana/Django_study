@@ -11,7 +11,16 @@ def post_list(request):
     return  render(request, 'post_list.html', context)
 
 def post_detail(request, post_id):
+    if Post.objects.last().pk < post_id:
+        return render(request, 'error.html', {'error_msg': 'Not found'})
+
     post = Post.objects.get(id=post_id)
+    if request.method == 'POST':
+        comment_content = request.POST['comment']
+        Comment.objects.create(
+            post = post,
+            content = comment_content,
+        )
 
     context = {
         'post': post,
