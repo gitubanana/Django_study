@@ -26,6 +26,7 @@ urlpatterns = [
     path('', index),
     path('posts/', post_list),
     path('posts/<int:post_id>/', post_detail),
+    path('posts/add/', post_add),
 ]
 
 urlpatterns += static(
