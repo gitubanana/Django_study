@@ -22,6 +22,7 @@ from config.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
 ]
 
 urlpatterns += static(
