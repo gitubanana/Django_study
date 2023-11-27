@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from community.forms import *
+from community.models import *
 
 # Create your views here.
 def index(request):
@@ -7,13 +7,12 @@ def index(request):
 
 def write(request):
     if request.method == 'POST':
-        form = Form(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form = Form()
+        Article.objects.create(
+            name = request.POST['name'],
+            title = request.POST['title'],
+            contents = request.POST['contents'])
 
-    return render(request, 'write.html', {'form' : form})
+    return render(request, 'write.html')
 
 def list(request):
     articleList = Article.objects.all()
