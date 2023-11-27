@@ -7,21 +7,25 @@
 
     <body>
         <table>
-            <tr>
-                <th>제목</th>
-                <th>저자</th>
-                <th>날짜</th>
-            </tr>
-            {% for article in articleList %}
-            <tr>
-                <td><a href="/view/{{article.pk}}">{{ article.title }}</a></td>
-                <td>{{ article.name }}</td>
-                <td>{{ article.cdate|date:"D d M Y"}}</td>
-            </tr>
-            {% endfor %}
-        </table>
+            <thead>
+              <tr>
+                <th scope='col'>제목</th>
+                <th scope='col'>저자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {% for article in articleList %}
+                <tr>
+                    <td><a href="/view/{{article.pk}}">{{ article.title }}</a></td>
+                    <td>{{ article.name }}</td>
+                </tr>
+                {% endfor %}
+              </tr>
+            </tbody>
+          </table>
 
         <br>
-        <a class="color" href="/">Back to main page</a>
+        <a class="color" href="/">Back to the main page</a>
     </body>
 </html>
