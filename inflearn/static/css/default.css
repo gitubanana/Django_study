@@ -1,14 +1,24 @@
-table, th, td {
-    border:1px solid black;
-    text-align: center;
-    width: 50%;
+@import "https://germanfrelo.github.io/base-css-stylesheet/base.css" layer(base);
+@import "https://codepen.io/germanfrelo/pen/mdMYKza.css" layer(styles);
+
+:root {
+  --page-max-inline-size: 100%;
+}
+
+caption {
+  text-align: start;
 }
 
 html {
     height: 100%;
 }
 
+#post-add > form > div {
+    padding: 10px; }
+
 body {
+    margin: 0 auto;
+    width: 300px;
     background-image: url('/static/images/background.jpg');
     height: 100%;
     background-position: center;
@@ -17,6 +27,7 @@ body {
     position: relative;
     background-color: black;
     opacity: 0.9;
+    margin: auto;
 }
 
 a {
