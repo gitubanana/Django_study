@@ -127,3 +127,7 @@ class QuestionDetailViewTests(TestCase):
         url = reverse("polls:detail", args=(past_question.id, ))
         response = self.client.get(url)
         self.assertContains(response, past_question.question_text)
+
+# TODO:
+#      ResultView가 과거 혹은 미래의 설문 조사를 가져오는지
+#      선택 사항이 없는 설문이 게시되지 않는지
