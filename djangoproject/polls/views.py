@@ -16,7 +16,7 @@ class IndexView(generic.ListView):
         Return the last five published questions
         (not including those set to be published in the future).
         """
-        # pub_date less than now
+        # pub_date <= now
         return Question.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[:5]
 
 class DetailView(generic.DetailView):
