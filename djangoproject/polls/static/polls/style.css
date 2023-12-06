@@ -1,0 +1,9 @@
+li a {
+    color: green;
+}
+
+body {
+    height: 100vh;
+    background: url("images/background.jpeg") no-repeat center;
+    background-size: cover;
+}
