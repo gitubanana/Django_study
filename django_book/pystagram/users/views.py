@@ -37,7 +37,7 @@ def logout_view(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = SignupForm(data=request.POST, files=request.files)
+        form = SignupForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             user = form.save()
             login(request, user)
