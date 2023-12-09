@@ -55,8 +55,7 @@ class SignupForm(forms.Form):
         short_description = self.cleaned_data['short_description']
         user = User.objects.create_user(
             username=username,
-            password1=password1,
-            password2=password2,
+            password=password1,
             profile_image=profile_image,
             short_description=short_description,
         )
