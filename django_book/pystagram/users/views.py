@@ -28,3 +28,6 @@ def login_view(request):
         context = {'form': form}
         return render(request, 'users/login.html', context)
 
+def logout_view(request):
+    logout(request)
+    return redirect('/users/login.html')
