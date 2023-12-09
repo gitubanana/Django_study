@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from users.forms import LoginForm
+from users.forms import LoginForm, SignupForm
+from users.models import User
 
 
 def login_view(request):
@@ -28,6 +29,21 @@ def login_view(request):
         context = {'form': form}
         return render(request, 'users/login.html', context)
 
+
 def logout_view(request):
     logout(request)
     return redirect('/users/login.html')
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(data=request.POST, files=request.files)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/posts/feeds')
+    else:
+        form = SignupForm()
+
+    context = {'form': form}
+    return render(request, 'users/signup.html', context)
