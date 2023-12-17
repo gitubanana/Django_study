@@ -34,6 +34,11 @@
 
                 <div class="post-content">
                     {{ post.content|linebreaksbr }}
+                    <div class="post-tags">
+                        {% for tag in post.tags.all %}
+                            <span><a href="{% url 'posts:tags' tag_name=tag.name %}">#{{ tag.name }}</a></span>
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <div class="post-buttons">
@@ -47,7 +52,7 @@
                             <li>
                                 <span>{{ comment.user.username }}</span>
                                 <span>{{ comment.content|linebreaksbr }}</span>
-    
+
                                 {% if user == comment.user %}
                                     <form method="POST" action="{% url 'posts:comment_delete' comment_id=comment.id %}">
                                         {% csrf_token %}
