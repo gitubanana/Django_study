@@ -26,8 +26,10 @@ def comment_add(request):
         comment = form.save(commit=False)
         comment.user = request.user
         comment.save()
-        url = reverse('posts:feeds') + f'#post-{comment.post_id}'
-        return HttpResponseRedirect(url)
+
+        url_next = request.GET.get("next") or reverse(
+            'posts:feeds') + f'#post-{comment.post_id}'
+        return HttpResponseRedirect(url_next)
 
 
 @require_POST
@@ -35,8 +37,10 @@ def comment_delete(request, comment_id):
     comment = Comment.objects.get(id=comment_id)
     if comment.user == request.user:
         comment.delete()
-        url = reverse('posts:feeds') + f'#post-{comment.post_id}'
-        return HttpResponseRedirect(url)
+
+        url_next = request.GET.get("next") or reverse(
+            'posts:feeds') + f'#post-{comment.post_id}'
+        return HttpResponseRedirect(url_next)
     else:
         return HttpResponseForbidden("이 댓글을 삭제할 권한이 없습니다.")
 
