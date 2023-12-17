@@ -25,8 +25,8 @@ class PostAdmin(admin.ModelAdmin):
         ),
     ]
     inlines = [
-        CommentInline,
         PostImageInline,
+        CommentInline,
     ]
     list_display = [
         "user",
