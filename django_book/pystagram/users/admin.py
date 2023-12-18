@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from users.models import *
 
-# Register your models here.
+
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     fieldsets = [
@@ -20,4 +20,5 @@ class CustomUserAdmin(UserAdmin):
             },
         ),
         ('중요한 일정', {'fields': ('last_login', 'date_joined')}),
+        ('연관객체', {"fields": ('like_posts', )}),
     ]
